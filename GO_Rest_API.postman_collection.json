@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "833d8ab9-5d5d-47d1-87eb-0ac9d6f2765c",
+		"name": "GO Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Criar usuários",
+					"item": [
+						{
+							"name": "Criar usuário",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Aanandinii Gupta\",\r\n    \"email\": \"nuovo2aanandinii_gupta@torphy.biz\",\r\n    \"gender\": \"Female\",\r\n    \"status\": \"Inactive\",\r\n    \"created_at\": \"2021-05-28T03:50:03.938+05:30\",\r\n    \"updated_at\": \"2021-05-28T03:50:03.938+05:30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/users",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir usuários",
+					"item": [
+						{
+							"name": "Excluir usuário",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/users/{{id_delete}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users",
+										"{{id_delete}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Alterar usuários",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}users/{{id_update}}",
+									"host": [
+										"{{url_base}}users"
+									],
+									"path": [
+										"{{id_update}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Criar Posts",
+					"item": [
+						{
+							"name": "Criar post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"user_id\": 2,\r\n    \"title\": \"Ad umerus qui arcus volva summisse quisquam amissio demum rerum aut crur astrum voco.\",\r\n    \"body\": \"Adeptio tertius consequatur. Tutamen subito deleniti. Attero aranea blandior. Vesco aeternus arbustum. Acquiro defendo carus. Cultura volaticus cogito. Certus triumphus tenetur. Degenero enim spiritus. Curtus aut excepturi. Autem confido delego. Rem somniculosus mollitia. Consequatur abutor aeneus. Asper ait coadunatio. Ustulo cubicularis delego. Velum enim tepesco. Conatus alo cito.\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buscar posts",
+					"item": [
+						{
+							"name": "Buscar posts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Post especifico",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts/{{id_post_busca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts",
+										"{{id_post_busca}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir post",
+					"item": [
+						{
+							"name": "Excluir Post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/posts/{{id_post_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts",
+										"{{id_post_excluir}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comentários",
+			"item": [
+				{
+					"name": "Criar comentários",
+					"item": [
+						{
+							"name": "Buscar comentários",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"post_id\": 1,\r\n    \"name\": \"Bheeshma Arora DDS\",\r\n    \"email\": \"bheeshma_dds_arora@roob.biz\",\r\n    \"body\": \"Aut et ipsam.\",\r\n    \"created_at\": \"2021-05-28T03:50:03.965+05:30\",\r\n    \"updated_at\": \"2021-05-28T03:50:03.965+05:30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/comments/",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Excluir comentários",
+					"item": [
+						{
+							"name": "Excluir comentário",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments/{{id_comentario_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments",
+										"{{id_comentario_excluir}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buscar comentários",
+					"item": [
+						{
+							"name": "Buscar comentários",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar comentário especifico",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments/{{id_comentario_busca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments",
+										"{{id_comentario_busca}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "6064e5f9a00e6683a6045553d93e362c74fc4f23ae41e19b9da76d96dfe90d9f",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"pm.info.requestName\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"OK.\");",
+					"});",
+					"pm.test(\"Response time is less than 2000ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					"if(pm.request.method == 'POST') (",
+					"    pm.test(\"Successful POST request\", function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+					"})",
+					")"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_comentario_excluir",
+			"value": "25"
+		},
+		{
+			"key": "id_comentario_busca",
+			"value": "22"
+		},
+		{
+			"key": "id_post_excluir",
+			"value": "26"
+		},
+		{
+			"key": "id_post_busca",
+			"value": "10"
+		},
+		{
+			"key": "id_delete",
+			"value": "3333"
+		}
+	]
+}
